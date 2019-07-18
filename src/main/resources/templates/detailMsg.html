@@ -1,44 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
 <head>
+    <title>Detail</title>
+
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-    <title>Add</title>
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="basicstyle.css">
+    <link rel="stylesheet" type="text/css" href="../static/basicstyle.css">
 </head>
 
 <body>
-<h2 id="headline">Add a Message</h2>
+<h2 id="headline">Message Detail</h2>
 
-<form action="#"
-      th:action="@{/process}"
-      th:object="${onemsg}"
-      method="post">
-    <input type="hidden" th:field="*{id}"/>
+<h3 style="padding-left: 10px">
+    <p>Title: </p><p th:text="${onemsg.title}"></p><br/>
 
-        Title:<input type="text" th:field="*{title}"/>
-        <span th:if="${#fields.hasErrors('title')}"
-              th:errors="*{title}"></span> <br/>
+    Content: <p th:text="${onemsg.content}"></p><br/>
 
-        Content:<textarea rows="3" th:field="*{content}"/>
-        <span th:if="${#fields.hasErrors('content')}"
-              th:errors="*{content}"></span> <br/>
+    Posted Date: <p th:text="${onemsg.postedDate}"></p><br/>
+    Posted By: <p th:text="${onemsg.postedBy}"></p><br/>
 
-        Posted Date(mmddyy):<input type="text" th:field="*{postedDate}"/>
-        <span th:if="${#fields.hasErrors('postedDate')}"
-              th:errors="*{postedDate}"></span> <br/>
-
-        Posted By:<input type="text" th:field="*{postedBy}"/>
-        <span th:if="${#fields.hasErrors('postedBy')}"
-              th:errors="*{postedBy}"></span> <br/>
-
-        <input type="submit" value="Submit">
-        <a href="/">Cancel</a><br/>
-
-</form>
+    <a href="/" class="btn btn-outline-dark btn-lg" style="padding: 5px">Cancel</a>
+</h3>
 
 
 <!--<div th:replace="basicFragment :: scriptFrag"></div>-->

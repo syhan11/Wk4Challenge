@@ -1,43 +1,42 @@
 package com.example.demo;
 
-import org.springframework.lang.NonNull;
-
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.lang.NonNull;
 import javax.validation.constraints.Size;
 
 @Entity
 public class Message {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private int id;
+    private long id;
 
     @NonNull
-    @Size(min=3, max=15)
+    @Size(min=3)
     private String title;
 
     @NonNull
-    @Size(min=3, max=300)
+    @Size(min=10)
     private String content;
 
     @NonNull
-    @Size(min=6, max=6)
+    @Size(min=4)
     private String postedDate;
 
     @NonNull
-    @Size(min=3, max=30)
+    @Size(min=3)
     private String postedBy;
 
     public Message() {
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

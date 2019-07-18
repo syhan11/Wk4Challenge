@@ -43,4 +43,8 @@ tr:nth-child(even) {
     text-align: center;
 }
 
-
+#msgForm {
+    padding: 50px;
+    alignment: center;
+    text-align: right;
+}
