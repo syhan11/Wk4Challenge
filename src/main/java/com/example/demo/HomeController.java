@@ -29,12 +29,14 @@ public class HomeController {
         return "addMsg";
     }
 
-
+    /*
+     * Basically a form object th:object="${onemsg}" is named "onemsg"
+     * but the controller is looking for class name not "onemsg" (the variable name)
+     */
     @PostMapping("/process")
-    public String processMsg(@Valid Message onemsg, BindingResult result, Model model) {
-
+    public String processMsg(@Valid @ModelAttribute("onemsg") Message onemsg,
+                             BindingResult result, Model model) {
         if (result.hasErrors()) {
-            model.addAttribute("onemsg", onemsg);
             return "addMsg";
         }
         else {
