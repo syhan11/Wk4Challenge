@@ -1,0 +1,46 @@
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.row {
+    padding: 10px;
+    width: 100%;
+    font-family: arial, sans-serif;
+    padding-left: 20px;
+}
+
+.footer-margin{
+    width:100%;
+    left: 0;
+    bottom: 0;
+    position:fixed;
+    text-align: center;
+}
+
+#headline {
+    font-family: arial, sans-serif;
+    text-align: center;
+    width: 100%;
+    padding-left: 10px;
+}
+
+
+#column1, #column2, #column3 {
+    font-family: arial, sans-serif;
+    text-align: center;
+}
+
+
