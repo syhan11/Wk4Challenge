@@ -15,19 +15,31 @@
 </head>
 
 <body>
-<h2 id="headline">Message Detail</h2>
-
-<h3 style="padding-left: 10px">
-    <p>Title: </p><p th:text="${onemsg.title}"></p><br/>
-
-    Content: <p th:text="${onemsg.content}"></p><br/>
-
-    Posted Date: <p th:text="${onemsg.postedDate}"></p><br/>
-    Posted By: <p th:text="${onemsg.postedBy}"></p><br/>
-
-    <a href="/" class="btn btn-outline-dark btn-lg" style="padding: 5px">Cancel</a>
-</h3>
-
+<div class="jumbotron">
+    <h1 class="display-4" name="title">Message Detail</h1><br/>
+    <a href="/" class="btn btn-outline-dark btn-lg">
+        <span class="glyphicon glyphicon-remove"></span>Close</a>
+</div>
+<div class="card bg-light mb-3" style="width: 100%">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-3">Title:</div>
+            <div class="col-9"><p th:text="${onemsg.title}"></p></div>
+        </div>
+        <div class="row">
+            <div class="col-3">Content:</div>
+            <div class="col-9"><p th:text="${onemsg.content}"></p></div>
+        </div>
+        <div class="row">
+            <div class="col-3">Posted Date:</div>
+            <div class="col-9"><p th:text="${onemsg.postedDate}"></p></div>
+        </div>
+        <div class="row">
+            <div class="col-3">Posted By:</div>
+            <div class="col-9"><p th:text="${onemsg.postedBy}"></p></div>
+        </div>
+    </div>
+</div>
 
 <!--<div th:replace="basicFragment :: scriptFrag"></div>-->
 

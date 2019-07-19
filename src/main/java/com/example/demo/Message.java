@@ -14,19 +14,19 @@ public class Message {
     private long id;
 
     @NonNull
-    @Size(min=3)
+    @Size(min=3, max=30)
     private String title;
 
     @NonNull
-    @Size(min=10)
+    @Size(min=10, max=300)
     private String content;
 
     @NonNull
-    @Size(min=4)
+    @Size(min=6, max=6)
     private String postedDate;
 
     @NonNull
-    @Size(min=3)
+    @Size(min=3, max=30)
     private String postedBy;
 
     public Message() {

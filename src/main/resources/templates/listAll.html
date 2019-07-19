@@ -15,34 +15,38 @@
 
 </head>
 
+
 <body>
-<h2 id="headline">All Messages</h2>
-<a href="/add" class="btn btn-outline-dark btn-lg">Add a Task</a>
+<div class="jumbotron">
+    <h1 class="display-4" name="title">All Messages</h1><br/>
+    <a href="/add" class="btn btn-outline-dark btn-lg">
+        <span class="glyphicon glyphicon-plus"></span>New</a>
+</div>
 
 <br/>
 <table>
-    <tr>
-        <th id="column1">Posting Info</th>
-        <th id="column2">Message Info</th>
-        <th id="column3">Action</th>
+    <tr style="width: 100%">
+        <th>Title</th>
+        <th>Posted Date</th>
+        <th>Posted By</th>
+        <th>Action</th>
     </tr>
     <tr th:each="item : ${allmsg}">
+        <td th:text="${item.title}"></td>
+        <td th:text="${item.postedDate}"></td>
+        <td th:text="${item.postedBy}"></td>
         <td>
-            Title: <p th:text="${item.title}"></p>
-            Posted Date: <p th:text="${item.postedDate}"></p>
-            Posted By: <p th:text="${item.postedBy}"></p>
-        </td>
-        <td> <p th:text="${item.content}"></p></td>
-
-        <td>
-            <a th:href="@{/update/{id}(id=${item.id})}">
-                <span class="glyphicon glyphicon-edit"></span>Update</a>
-            <br/>
-            <a th:href="@{/detail/{id}(id=${item.id})}">
-                <span class="glyphicon glyphicon-trash"></span>Detail</a>
-            <br/>
-            <a th:href="@{/delete/{id}(id=${item.id})}">
-                <span class="glyphicon glyphicon-trash"></span>Delete</a>
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="glyphicon glyphicon-edit">
+                    <a th:href="@{/update/{id}(id=${item.id})}">
+                        Update</a></button>
+                <button type="button" class="glyphicon glyphicon-edit">
+                    <a th:href="@{/detail/{id}(id=${item.id})}">
+                        Detail</a></button>
+                <button type="button" class="glyphicon glyphicon-trash">
+                    <a th:href="@{/delete/{id}(id=${item.id})}">
+                        Delete</a></button>
+            </div>
         </td>
     </tr>
 </table>

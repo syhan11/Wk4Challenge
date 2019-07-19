@@ -44,7 +44,19 @@ public class HomeController {
             messageRepository.save(onemsg);
             return "redirect:/";
         }
+    }
 
+    @PostMapping("/updateprocess")
+    public String processUpdateMsg(@Valid @ModelAttribute("onemsg") Message onemsg,
+                             BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            return "updateMsg";
+        }
+        else {
+            model.addAttribute("onemsg", onemsg);
+            messageRepository.save(onemsg);
+            return "redirect:/";
+        }
     }
 
     @RequestMapping("/detail/{id}")
@@ -56,7 +68,7 @@ public class HomeController {
     @RequestMapping("/update/{id}")
     public String updateMsg(@PathVariable("id") long id, Model model){
         model.addAttribute("onemsg", messageRepository.findById(id).get());
-        return "addMsg";
+        return "updateMsg";
     }
 
     @RequestMapping("/delete/{id}")
