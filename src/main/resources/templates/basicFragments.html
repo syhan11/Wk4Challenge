@@ -2,14 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <th:block th:fragment="headerFrag">
+
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../static/basicstyle.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/basicstyle.css}">
 
 </th:block>
+<!--<body>-->
 
 <th:block th:fragment="scriptFrag">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -23,6 +25,11 @@
             crossorigin="anonymous"></script>
 </th:block>
 
+<div th:fragment="copyFrag">
+    <div class="footer-margin">
+    &copy; 2019 Sue @ America's Promise: Java Web Developer Boot Camp
+    </div>
+</div>
 
-
+<!--</body>-->
 </html>

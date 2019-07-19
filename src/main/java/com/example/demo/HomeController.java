@@ -40,7 +40,7 @@ public class HomeController {
             return "addMsg";
         }
         else {
-            model.addAttribute("onemsg", onemsg);
+            //model.addAttribute("onemsg", onemsg);
             messageRepository.save(onemsg);
             return "redirect:/";
         }
